@@ -1,0 +1,327 @@
+/* ========================================
+   PAGE PANIER
+======================================== */
+
+.cart-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px 80px;
+  box-sizing: border-box;
+}
+
+.cart-page > h1 {
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: 400;
+  color: #292929;
+}
+
+/* ========================================
+   DISPOSITION GENERALE
+======================================== */
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 50px;
+  align-items: start;
+}
+
+/* ========================================
+   LISTE DES ARTICLES
+======================================== */
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 25px;
+
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e5e2dc;
+}
+
+.cart-item-image {
+  width: 140px;
+  height: 160px;
+
+  object-fit: contain;
+  background-color: #f5f3ee;
+  border-radius: 6px;
+}
+
+/* ========================================
+   INFORMATIONS PRODUIT
+======================================== */
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.cart-item-info h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  color: #292929;
+}
+
+.cart-item-price {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cart-item-stock {
+  margin: 0;
+  font-size: 13px;
+  color: #718477;
+}
+
+.stock-limit {
+  margin: 0;
+  font-size: 12px;
+  color: #c7856d;
+}
+
+.cart-item-subtotal {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ========================================
+   GESTION DES QUANTITES
+======================================== */
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 5px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+
+  height: 38px;
+  border: 1px solid #dedbd5;
+  border-radius: 4px;
+}
+
+.quantity-control button {
+  width: 38px;
+  height: 36px;
+
+  border: none;
+  background: transparent;
+  color: #292929;
+
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.quantity-control span {
+  min-width: 35px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.quantity-control button:hover:not(:disabled) {
+  background-color: #f0ede7;
+}
+
+.quantity-control button:disabled {
+  color: #c8c8c8;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   SUPPRESSION
+======================================== */
+
+.remove-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px;
+
+  border: none;
+  background: transparent;
+  color: #888;
+
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.remove-item:hover {
+  color: #c7856d;
+}
+
+/* ========================================
+   RECAPITULATIF COMMANDE
+======================================== */
+
+.cart-summary {
+  padding: 30px;
+  background-color: #f5f3ee;
+  border-radius: 6px;
+}
+
+.cart-summary h2 {
+  margin: 0 0 30px;
+
+  font-size: 22px;
+  font-weight: 400;
+  color: #292929;
+}
+
+.cart-summary-line,
+.cart-summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-summary-line {
+  padding-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.cart-summary-total {
+  padding: 22px 0;
+  border-top: 1px solid #dedbd5;
+
+  font-size: 17px;
+  color: #292929;
+}
+
+.cart-summary-total strong {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* ========================================
+   BOUTON COMMANDER
+======================================== */
+
+.checkout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 15px 20px;
+  margin-top: 15px;
+  box-sizing: border-box;
+
+  background-color: #718477;
+  color: white;
+  border-radius: 4px;
+
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: background-color 0.2s;
+}
+
+.checkout-button:hover {
+  background-color: #576b5e;
+  color: white;
+}
+
+/* ========================================
+   CONTINUER LES ACHATS
+======================================== */
+
+.continue-shopping {
+  display: inline-block;
+  align-self: flex-start;
+
+  margin-top: 10px;
+  color: #718477;
+
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.continue-shopping:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   ACCESSIBILITE
+======================================== */
+
+.cart-page a:focus-visible,
+.cart-page button:focus-visible {
+  outline: 2px solid #718477;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   RESPONSIVE - TABLETTE
+======================================== */
+
+@media (max-width: 900px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cart-summary {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .cart-page {
+    padding: 30px 16px 60px;
+  }
+
+  .cart-page > h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .cart-item {
+    grid-template-columns: 95px minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .cart-item-image {
+    width: 95px;
+    height: 120px;
+  }
+
+  .cart-item-info h2 {
+    font-size: 15px;
+  }
+
+  .cart-item-actions {
+    gap: 15px;
+  }
+
+  .cart-summary {
+    padding: 25px 20px;
+  }
+}
